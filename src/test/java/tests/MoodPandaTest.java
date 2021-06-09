@@ -1,6 +1,8 @@
 package tests;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.MyDiaryPage;
 
 public class MoodPandaTest extends BaseTest {
 
@@ -14,7 +16,9 @@ public class MoodPandaTest extends BaseTest {
                 .login(LOGIN, PASSWORD)
                 .waitForMoodButtonVisible()
                 .clickOnUpdateButton()
-                .updateMood(1);
-
+                .updateMood(9, "I am good!!!")
+                .clickGoToMyDiaryButton();
+        Assert.assertEquals(myDiaryPage.getRate(), "8");
+        Assert.assertEquals(myDiaryPage.getTextMessage(), "I am good!!!");
     }
 }

@@ -5,6 +5,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.FeedPage;
 import pages.LoginPage;
+import pages.MyDiaryPage;
 import pages.RateYourHappinessModalPage;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
@@ -13,6 +14,7 @@ public class BaseTest {
     LoginPage loginPage;
     FeedPage feedPage;
     RateYourHappinessModalPage rateYourHappinessModalPage;
+    MyDiaryPage myDiaryPage;
 
     @BeforeMethod
     public void setUp() {
@@ -24,6 +26,7 @@ public class BaseTest {
         loginPage = new LoginPage();
         feedPage = new FeedPage();
         rateYourHappinessModalPage = new RateYourHappinessModalPage();
+        myDiaryPage = new MyDiaryPage();
     }
 
 //    @AfterMethod
