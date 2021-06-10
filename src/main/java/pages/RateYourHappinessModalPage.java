@@ -10,17 +10,34 @@ public class RateYourHappinessModalPage {
     public static final String UPDATE_MOOD_BUTTON = ".ButtonUpdate";
     public static final String TEXT_MESSAGE_CSS = ".UpdateMoodText";
 
-    public MoodUpdatetModalPage updateMood(int moodVAlue, String message) {
+    public MoodUpdatetModalPage updateMoodRate(int moodValue) {
         $(SLIDER_CSS).click();
         int defaultMoodValue = 5;
         Keys direction = null;
-        if (moodVAlue > defaultMoodValue){
+        if (moodValue > defaultMoodValue){
             direction = Keys.ARROW_RIGHT;
-        } else if (moodVAlue < defaultMoodValue) {
+        } else if (moodValue < defaultMoodValue) {
             direction = Keys.ARROW_LEFT;
         }
-        if (moodVAlue != defaultMoodValue){
-            for (int i = 0; i < Math.abs(moodVAlue - defaultMoodValue); i++) {
+        if (moodValue != defaultMoodValue){
+            for (int i = 0; i < Math.abs(moodValue - defaultMoodValue); i++) {
+                $(SLIDER_CSS).sendKeys(direction);
+            }
+        }
+        $(UPDATE_MOOD_BUTTON).click();
+        return new MoodUpdatetModalPage();
+    }
+    public MoodUpdatetModalPage updateMoodRateWithMessage(int moodValue, String message) {
+        $(SLIDER_CSS).click();
+        int defaultMoodValue = 5;
+        Keys direction = null;
+        if (moodValue > defaultMoodValue){
+            direction = Keys.ARROW_RIGHT;
+        } else if (moodValue < defaultMoodValue) {
+            direction = Keys.ARROW_LEFT;
+        }
+        if (moodValue != defaultMoodValue){
+            for (int i = 0; i < Math.abs(moodValue - defaultMoodValue); i++) {
                 $(SLIDER_CSS).sendKeys(direction);
             }
         }
@@ -28,4 +45,5 @@ public class RateYourHappinessModalPage {
         $(UPDATE_MOOD_BUTTON).click();
         return new MoodUpdatetModalPage();
     }
+
 }
