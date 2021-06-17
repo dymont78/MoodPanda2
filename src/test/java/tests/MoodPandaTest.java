@@ -42,6 +42,5 @@ public class MoodPandaTest extends BaseTest {
         myDiaryPage
                 .openPage()
                 .sendAHugButton();
-
     }
 }
