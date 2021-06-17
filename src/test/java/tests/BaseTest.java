@@ -29,8 +29,8 @@ public class BaseTest {
         myDiaryPage = new MyDiaryPage();
     }
 
-//    @AfterMethod
-//    public void closeBrowser(){
-//        getWebDriver().quit();
-//    }
 }
+    @AfterMethod
+    public void closeBrowser(){
+        getWebDriver().quit();
+    }
