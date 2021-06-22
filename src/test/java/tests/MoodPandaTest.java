@@ -42,5 +42,6 @@ public class MoodPandaTest extends BaseTest {
         myDiaryPage
                 .openPage()
                 .sendAHugButton();
+        Assert.assertEquals(myDiaryPage.getMessageFromMyHug(), "🐼Hugs - You");
     }
 }
