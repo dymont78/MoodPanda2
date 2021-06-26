@@ -23,7 +23,7 @@ public class MyDiaryPage {
         open(MY_DIARY_PAGE_URL);
         return new MyDiaryPage();
     }
-    public  String getMessageFromMyHug(){
+    public String getMessageFromMyHug(){
         String message = $(".p7674547.mcw1 .label-hug").getText();
         System.out.println(message);
         return message;
